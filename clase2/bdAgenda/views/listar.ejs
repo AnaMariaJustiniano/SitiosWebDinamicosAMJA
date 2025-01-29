@@ -1,0 +1,25 @@
+<% include('layout',{body: null}) %> 
+<h2>Lista de Registros de la Agenda</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% agenda.forEach(registro => { %>
+            <tr>
+                <td><%= registro.nombre %></td>
+                <td><%= registro.apellidos %></td>
+                <td><%= registro.direccion %></td>
+                <td><%= registro.telefono %></td>
+                <td>
+                    <a href="/editar/<%= registro.id %>">Editar</a>
+                    <a href="/eliminar/<%= registro.id %>">Eliminar</a>
+                </td>
+            </tr>
+        <% }) %>
+</table>
