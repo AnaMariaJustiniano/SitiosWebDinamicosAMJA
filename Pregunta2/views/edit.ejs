@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+</head>
+<body>
+    <h1>Editar Cliente</h1>
+    <form action="/users/<%= user._id %>?_method=PUT" method="POST">
+        <label>Ci: <input type="text" name="ci" value="<%= user.ci %>" required></label><br>
+        <label>Nombres: <input type="text" name="nombres" value="<%= user.nombres %>" required></label><br>
+        <label>Apellidos: <input type="text" name="apellidos" value="<%= user.apellidos %>" required></label><br>
+        <label>Celular: <input type="text" name="celular" value="<%= user.celular %>" required></label><br>
+        <label>Correo: <input type="email" name="correo" value="<%= user.correo %>" required></label><br>
+        <label>
+        <button type="submit">Actualizar</button>
+    </form>
+    <a href="/">Regresar</a>
+</body>
+</html>
